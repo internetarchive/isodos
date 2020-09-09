@@ -1,4 +1,4 @@
-module github.com/internetarchive/isodos-go
+module github.com/internetarchive/isodos
 
 go 1.15
 
@@ -7,6 +7,7 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/dustin/go-humanize v1.0.0
 	github.com/gosuri/uilive v0.0.4
+	github.com/internetarchive/isodos-go v1.0.4
 	github.com/sirupsen/logrus v1.2.0
 	github.com/stretchr/testify v1.3.0 // indirect
 	github.com/urfave/cli v1.22.4
