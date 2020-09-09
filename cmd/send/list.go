@@ -2,7 +2,6 @@ package send
 
 import (
 	"encoding/json"
-	"fmt"
 
 	"github.com/internetarchive/isodos-go/config"
 	"github.com/internetarchive/isodos-go/pkg/isodos"
@@ -35,7 +34,7 @@ func CmdSendList(c *cli.Context) error {
 	}
 
 	// Send seeds
-	response, err := client.Send(seeds)
+	response, err := client.Send(seeds, true)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -45,7 +44,7 @@ func CmdSendList(c *cli.Context) error {
 		log.Fatal(err)
 	}
 
-	fmt.Println(string(b))
+	log.Println(string(b))
 
 	return nil
 }

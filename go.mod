@@ -5,6 +5,7 @@ go 1.14
 require (
 	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
+	github.com/dustin/go-humanize v1.0.0
 	github.com/gosuri/uilive v0.0.4
 	github.com/sirupsen/logrus v1.2.0
 	github.com/stretchr/testify v1.3.0 // indirect

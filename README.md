@@ -63,7 +63,7 @@ func main() {
 	seeds := []string{"https://archive.org", "https://youtube.com", "https://google.com"}
 
 	client := isodos.Init("YOUR-S3-KEY", "YOUR-S3-SECRET", "YOUR-PROJECT")
-	response, err := client.Send(seeds)
+	response, err := client.Send(seeds, true)
 	if err != nil {
 		log.Fatal(err)
 	}
