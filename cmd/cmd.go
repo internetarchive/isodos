@@ -10,32 +10,32 @@ import (
 )
 
 var GlobalFlags = []cli.Flag{
-	cli.StringFlag{
+	&cli.StringFlag{
 		Name:        "config",
 		Required:    false,
 		Value:       "~/.isodos.json",
 		Usage:       "The config file to use",
 		Destination: &config.App.AppConfigFile,
 	},
-	cli.StringFlag{
+	&cli.StringFlag{
 		Name:        "s3-access-key",
 		Required:    false,
 		Usage:       "archive.org S3-Like Access Key",
 		Destination: &config.App.Flags.S3AccessKey,
 	},
-	cli.StringFlag{
+	&cli.StringFlag{
 		Name:        "s3-secret-key",
 		Required:    false,
 		Usage:       "archive.org S3-Like Secret Key",
 		Destination: &config.App.Flags.S3SecretKey,
 	},
-	cli.StringFlag{
+	&cli.StringFlag{
 		Name:        "project",
 		Required:    false,
 		Usage:       "Isodos project to use",
 		Destination: &config.App.Flags.Project,
 	},
-	cli.BoolFlag{
+	&cli.BoolFlag{
 		Name:        "debug",
 		Destination: &config.App.Flags.Debug,
 	},
