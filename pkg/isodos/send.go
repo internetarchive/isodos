@@ -9,6 +9,7 @@ import (
 	"net/url"
 	"path"
 	"strconv"
+	"strings"
 
 	"github.com/dustin/go-humanize"
 	log "github.com/sirupsen/logrus"
@@ -31,7 +32,7 @@ var batchEndpoint = "/api/batch/"
 
 // Send proceed to send a slice of URLs to Isodos
 func (c *Client) Send(seeds []string, logging bool) (resp *Response, err error) {
-	var payload string
+	var payload strings.Builder
 	var seedsCount = len(seeds)
 
 	endpoint, err := url.Parse(c.IsodosURL)
@@ -54,12 +55,12 @@ func (c *Client) Send(seeds []string, logging bool) (resp *Response, err error) 
 		}
 
 		if key == len(seeds)-1 {
-			payload = payload + string(lineJSON)
+			payload.WriteString(string(lineJSON))
 		} else {
-			payload = payload + string(lineJSON) + "\n"
+			payload.WriteString(string(lineJSON) + "\n")
 		}
 	}
-	payloadSize := humanize.Bytes(uint64(binary.Size([]byte(payload))))
+	payloadSize := humanize.Bytes(uint64(binary.Size([]byte(payload.String()))))
 	if logging {
 		log.WithFields(log.Fields{
 			"seeds-count":  seedsCount,
@@ -68,7 +69,7 @@ func (c *Client) Send(seeds []string, logging bool) (resp *Response, err error) 
 	}
 
 	// Create request
-	request, err := http.NewRequest("POST", endpoint.String(), bytes.NewBuffer([]byte(payload)))
+	request, err := http.NewRequest("POST", endpoint.String(), bytes.NewBuffer([]byte(payload.String())))
 	if err != nil {
 		return resp, err
 	}
