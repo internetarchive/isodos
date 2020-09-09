@@ -50,6 +50,16 @@ Isodos-go will print the JSON response that the API return, containing the diges
 
 Here is an example to use isodos-go as a package:
 ```go
+package main
+
+import (
+	"encoding/json"
+	"log"
+
+	"github.com/internetarchive/isodos-go"
+)
+
+func main() {
 	seeds := []string{"https://archive.org", "https://youtube.com", "https://google.com"}
 
 	client := isodos.Init("YOUR-S3-KEY", "YOUR-S3-SECRET", "YOUR-PROJECT")
@@ -63,5 +73,6 @@ Here is an example to use isodos-go as a package:
 		log.Fatal(err)
 	}
 
-	fmt.Println(string(b))
+	log.Println(string(b))
+}
 ```
