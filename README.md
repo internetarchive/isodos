@@ -1,3 +1,9 @@
+[![made-with-Go](https://img.shields.io/badge/Made%20with-Go-1f425f.svg)](http://golang.org)
+[![GitHub go.mod Go version of a Go module](https://img.shields.io/github/go-mod/go-version/internetarchive/isodos-go.svg)](https://github.com/internetarchive/isodos-go)
+[![](https://img.shields.io/badge/godoc-reference-blue.svg)](https://godoc.org/github.com/internetarchive/isodos-go)
+[![Go Report Card](https://goreportcard.com/badge/github.com/internetarchive/isodos-go)](https://goreportcard.com/report/github.com/internetarchive/isodos-go)
+[![GitHub license](https://img.shields.io/github/license/internetarchive/isodos-go.svg)](https://github.com/internetarchive/isodos-go/blob/master/LICENSE)
+
 # isodos-go
 Go module to interact with Internet Archive's Isodos API
 
