@@ -3,11 +3,11 @@ package send
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 
 	"github.com/internetarchive/isodos-go/config"
 	"github.com/internetarchive/isodos-go/pkg/isodos"
 	"github.com/internetarchive/isodos-go/pkg/utils"
+	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli/v2"
 )
 
