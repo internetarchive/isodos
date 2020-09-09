@@ -3,7 +3,6 @@ package utils
 import (
 	"bufio"
 	"errors"
-	"log"
 	"os"
 
 	"github.com/asaskevich/govalidator"
@@ -23,7 +22,6 @@ func LoadSeedsFromFile(path string) (seeds []string, err error) {
 	for scanner.Scan() {
 		valid := govalidator.IsURL(scanner.Text())
 		if valid == false {
-			log.Println(scanner.Text())
 			continue
 		}
 
