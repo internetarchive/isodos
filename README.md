@@ -48,7 +48,7 @@ Isodos-go will print the JSON response that the API return, containing the diges
 
 ## The module
 
-Here is an example to use isodos-go as a package:
+Here is an example to use isodos-go as a module:
 ```go
 package main
 
