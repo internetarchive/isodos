@@ -8,7 +8,7 @@ import (
 	"github.com/internetarchive/isodos-go/config"
 	"github.com/internetarchive/isodos-go/setup"
 	"github.com/sirupsen/logrus"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 	"gopkg.in/AlecAivazis/survey.v1"
 )
 
@@ -19,8 +19,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "isodos-go"
 	app.Version = Version
-	app.Author = "Corentin Barreau"
-	app.Email = "corentin@archive.org"
+	app.Authors = append(app.Authors, &cli.Author{Name: "Corentin Barreau", Email: "corentin@archive.org"})
 	app.Usage = ""
 
 	app.Flags = cmd.GlobalFlags
@@ -47,7 +46,7 @@ func main() {
 			setup.Setup()
 		}
 
-		if context.GlobalBool("debug") {
+		if config.App.Flags.Debug {
 			logrus.SetLevel(logrus.DebugLevel)
 		}
 

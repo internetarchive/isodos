@@ -4,10 +4,12 @@ go 1.14
 
 require (
 	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef
-	github.com/mitchellh/go-homedir v1.1.0
+	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/sirupsen/logrus v1.2.0
-	github.com/spf13/cobra v1.0.0
-	github.com/spf13/viper v1.7.1
+	github.com/stretchr/testify v1.3.0 // indirect
 	github.com/urfave/cli v1.22.4
+	github.com/urfave/cli/v2 v2.2.0
+	golang.org/x/crypto v0.0.0-20190605123033-f99c8df09eb5 // indirect
+	golang.org/x/sys v0.0.0-20190624142023-c5567b49c5d0 // indirect
 	gopkg.in/AlecAivazis/survey.v1 v1.8.8
 )

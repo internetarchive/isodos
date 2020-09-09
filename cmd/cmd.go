@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/sirupsen/logrus"
-	"github.com/urfave/cli"
+	"github.com/urfave/cli/v2"
 
 	config "github.com/internetarchive/isodos-go/config"
 )
@@ -41,10 +41,10 @@ var GlobalFlags = []cli.Flag{
 	},
 }
 
-var Commands []cli.Command
+var Commands []*cli.Command
 
 func RegisterCommand(command cli.Command) {
-	Commands = append(Commands, command)
+	Commands = append(Commands, &command)
 }
 
 func CommandNotFound(c *cli.Context, command string) {
